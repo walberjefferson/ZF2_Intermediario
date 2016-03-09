@@ -1,0 +1,52 @@
+<?php if ($this->pageCount): ?>
+    <div class="paginationControl text-center">
+
+        <!-- Primeira -->
+        <?php if (isset($this->previous)): ?>
+        <a class="btn btn-primary btn-sm" href="<?php echo $this->url($this->route,array('page' => $this->first)); ?>">
+            <i class="fa fa-angle-double-left"></i>
+            <?php echo 'Primeira' ?>
+         </a> 
+         <?php else: ?>
+        <span class="btn btn-default disabled btn-sm">
+            <i class="fa fa-angle-double-left"></i>
+            <?php echo 'Primeira' ?></span>
+         <?php endif; ?>
+
+         <!-- Anterior -->
+        <?php if (isset($this->previous)): ?>
+        <a class="btn btn-primary btn-sm" href="<?php echo $this->url($this->route, array('page' => $this->previous)); ?>">
+             <i class="fa fa-angle-double-left"></i>
+            <?php echo 'Anterior' ?>
+         </a> 
+        <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+              <i class="fa fa-angle-double-left"></i>
+             <?php echo 'Anterior' ?></span>
+        <?php endif; ?>
+
+        <!-- Próxima -->
+        <?php if (isset($this->next)): ?>
+        <a class="btn btn-primary btn-sm" href="<?php echo $this->url($this->route, array('page' => $this->next)); ?>">
+            <i class="fa fa-angle-double-right"></i>
+            <?php echo 'Próxima' ?>
+         </a> 
+         <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+             <i class="fa fa-angle-double-right"></i>
+             <?php echo 'Próxima' ?></span>
+         <?php endif; ?>
+
+         <!-- Última -->
+         <?php if (isset($this->next)): ?>
+         <a class="btn btn-primary btn-sm" href="<?php echo $this->url($this->route, array('page' => $this->last)); ?>">
+             <i class="fa fa-angle-double-right"></i>
+             <?php echo 'Última' ?>
+         </a>
+         <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+              <i class="fa fa-angle-double-right"></i>
+             <?php echo 'Última' ?></span>
+         <?php endif; ?>
+     </div>
+<?php endif; ?>

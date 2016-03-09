@@ -1,0 +1,54 @@
+<?php if ($this->pageCount): ?>
+    <div class="paginationControl">
+        <?php echo $this->firstItemNumber; ?> - <?php echo $this->lastItemNumber; ?>
+        <?php  echo  ' ' . $this->translate('de') . ' ' . $this->totalItemCount; ?>
+
+        <!-- Primeira -->
+        <?php if (isset($this->previous)): ?>
+        <a class="btn btn-primary btn-sm" action="paginator-ajax" href="<?php echo $this->url($this->route,array('page' => $this->first, 'action' => 'search')); ?>">
+            <i class="fa fa-angle-double-left"></i>
+            <?php echo $this->translate('Primeira') ?>
+         </a> 
+         <?php else: ?>
+        <span class="btn btn-default disabled btn-sm">
+            <i class="fa fa-angle-double-left"></i>
+            <?php echo $this->translate('Primeira') ?></span> 
+         <?php endif; ?>
+
+         <!-- Anterior -->
+        <?php if (isset($this->previous)): ?>
+        <a class="btn btn-primary btn-sm" action="paginator-ajax" href="<?php echo $this->url($this->route, array('page' => $this->previous, 'action' => 'search')); ?>">
+             <i class="fa fa-angle-double-left"></i>
+            <?php echo $this->translate('Anterior') ?>
+         </a> 
+        <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+              <i class="fa fa-angle-double-left"></i>
+             <?php echo $this->translate('Anterior') ?></span> 
+        <?php endif; ?>
+
+        <!-- Próxima -->
+        <?php if (isset($this->next)): ?>
+        <a class="btn btn-primary btn-sm" action="paginator-ajax" href="<?php echo $this->url($this->route, array('page' => $this->next, 'action' => 'search')); ?>">
+            <i class="fa fa-angle-double-right"></i>
+            <?php echo $this->translate('Próxima') ?> 
+         </a> 
+         <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+             <i class="fa fa-angle-double-right"></i>
+             <?php echo $this->translate('Próxima') ?></span> 
+         <?php endif; ?>
+
+         <!-- Última -->
+         <?php if (isset($this->next)): ?>
+         <a class="btn btn-primary btn-sm" action="paginator-ajax" href="<?php echo $this->url($this->route, array('page' => $this->last, 'action' => 'search')); ?>">
+             <i class="fa fa-angle-double-right"></i>
+             <?php echo $this->translate('Última') ?>
+         </a>
+         <?php else: ?>
+         <span class="btn btn-default disabled btn-sm">
+              <i class="fa fa-angle-double-right"></i>
+             <?php echo $this->translate('Última') ?></span>
+         <?php endif; ?>
+     </div>
+<?php endif; ?>

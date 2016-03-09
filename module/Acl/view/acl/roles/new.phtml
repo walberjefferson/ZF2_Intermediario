@@ -1,0 +1,51 @@
+<h3>Nova Role</h3>
+
+<br>
+
+<?php
+$form = $this->form;
+
+$form->setAttribute('action', $this->url('acl-admin/default', array('controller' => 'roles', 'action' => 'new')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+#echo $this->formCollection($form);
+?>
+
+<div class="form-group">
+    <label class="col-xs-2 control-label">Nome:</label>
+
+    <div class="col-xs-10">
+        <?php echo $this->formRow($form->get('nome')); ?>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-1">
+        <div class="form-group">
+            <label class="col-xs-2 control-label">Herda:</label>
+
+            <div class="col-xs-10">
+                <?php echo $this->formRow($form->get('parent')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-5">
+        <div class="form-group">
+            <label class="col-xs-2 control-label">Admin?</label>
+            <div class="checkbox col-xs-10">
+                <?php echo $this->formRow($form->get('isAdmin')); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-xs-10 col-xs-offset-2">
+        <?php echo $this->formRow($form->get('submit')); ?>
+    </div>
+</div>
+
+<?php
+echo $this->form()->closeTag();
+?>

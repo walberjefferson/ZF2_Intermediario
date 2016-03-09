@@ -1,0 +1,36 @@
+<h1>Users</h1>
+
+<br>
+
+<p>
+    <a href="<?php echo $this->url('user-admin/default', array('action' => 'new')); ?>">Novo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <?php foreach($this->data as $k => $entity) : ?>
+        <tr>
+            <td><?php echo $k+1; ?></td>
+            <td><?php echo $entity->getNome(); ?></td>
+            <td><?php echo $entity->getEmail(); ?></td>
+            <td>
+                <a href="<?php echo $this->url('user-admin/default', array('controller'=>'users','action'=>'edit', 'id' => $entity->getId())); ?>">Editar</a>
+                <a href="<?php echo $this->url('user-admin/default', array('controller'=>'users','action'=>'delete', 'id' => $entity->getId())); ?>">Excluir</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+
+<br>
+
+<?php echo $this->paginationControl($this->data, 'Sliding', 'partials/paginator'); ?>

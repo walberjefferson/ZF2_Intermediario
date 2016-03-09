@@ -1,0 +1,33 @@
+{
+    "name": "walberjefferson/ZF2_Intermediario",
+    "description": "Estudo do curso ZF2 Intermediario",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "doctrine",
+        "module",
+        "zf2"
+    ],
+    "authors": [
+        {
+            "name": "Walber Jefferson",
+            "email": "walberjefferson@hotmail.com",
+            "homepage": "http://www.v2i.com.br",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.5",
+        "zendframework/zendframework": "~2.5",
+        "doctrine/doctrine-orm-module": "~0.7",
+        "hounddog/doctrine-data-fixture-module": "0.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "module\\Base": "src/",
+            "module\\User": "src/",
+            "module\\Acl":  "src/"
+        }
+    }
+}
